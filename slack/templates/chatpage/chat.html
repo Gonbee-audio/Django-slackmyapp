@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+
+{% block title %}chat{% endblock %} 
+
+{% block content %}
+<h2>チャットルーム</h2>
+
+
+<div>
+{{ ChatText.chat_text }}
+</div>
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Login</button>
+</form>
+{% endblock %}
