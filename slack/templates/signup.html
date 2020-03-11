@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}]
+ <title>{% block title %}アカウント作成{% endblock %}</title>
+
+{% block customcss %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+{% endblock customcss %}
+
+{% block content %}
+
+
+
+<form class="form-signin" method="POST" action="" >{% csrf_token %}
+<h1>アカウント作成</h1>
+<a href=../login>ログイン</a>
+{% if error %}{{ error }}{% endif %}
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="text" id="inputEmail" class="form-control" name="username" placeholder="ユーザー名" required autofocus>
+  <label for="inputPassword" class="sr-only">パスワードを入れてください</label>
+  <input type="password" id="inputPassword" class="form-control" name="password" placeholder="パスワード" required>
+  <div class="checkbox mb-3">
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+</form>
+
+{% endblock content %}

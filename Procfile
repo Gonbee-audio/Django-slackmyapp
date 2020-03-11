@@ -1,0 +1,1 @@
+web: gunicorn Djangoslackmyapp.wsgi --log-file -

@@ -3,14 +3,51 @@
 {% block title %}chat{% endblock %} 
 
 {% block content %}
-<h2>チャットルーム</h2>
-
-
-<div>
-{{ ChatText.chat_text }}
+  <h2>チャットルーム</h2>
+<div class="container">
+  <nav id="navbar-example2" class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="#fat">@fat</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#mdo">@mdo</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#one">one</a>
+        <a class="dropdown-item" href="#two">two</a>
+        <div role="separator" class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#three">three</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+<div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+  {% for item in object %}
+  {{ item.user }}{{ item.text }}
+  {% endfor %}
 </div>
-<form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Login</button>
-</form>
+  <form activate="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+  <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">$</span>
+  </div>
+  
+  <input type="text" class="form-control" name="text" aria-label="Amount (to the nearest dollar)">
+  <input type="hidden" name="username" value="a">
+  <input type="hidden" name="good" value="0">
+  <input type="hidden" name="author" value="a">
+  <div class="input-group-append">
+    <input type="submit" class="input-group-text">
+  </div>
+  
+  </form>
+  </div>
+</div>
+<script>
+
+</script>
 {% endblock %}

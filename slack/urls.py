@@ -1,6 +1,9 @@
 from django.urls import path
-from . import views
+from .views import SignUpView, Login, ChatModel, SendChatModel
 
 urlpatterns = [
-    path('', views.chat_text, name="chat_text"),
+    path('', ChatModel, name="chat"),
+    path('', SendChatModel, name='send'),
+    path('create/', SignUpView, name="create"),
+    path('login/', Login, name="login")
 ]
