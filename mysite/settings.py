@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'Djangoslackmyapp',
         'USER': 'audio',
-        'PASSWORD': 'buro1993',
+        'PASSWORD': 'fuwari1993',
         'HOST': '',
         'PORT': '5432',
     }
