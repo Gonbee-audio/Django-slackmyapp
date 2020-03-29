@@ -1,0 +1,34 @@
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH="/usr/local/opt/php@7.2/bin:$PATH"
+export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
+export PATH=/.composer/vender/bin::/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin source /Users/takahashiyuuhei/bath_profile
+export PATH=/.composer/vender/bin::/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin source /Users/takahashiyuuhei/bath_profile
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+# added by Anaconda3 2019.10 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/takahashiyuuhei/opt/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    \eval "$__conda_setup"
+else
+    if [ -f "/Users/takahashiyuuhei/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/takahashiyuuhei/opt/anaconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/Users/takahashiyuuhei/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<
+export PGDATA=$PGDATA:usr/local/var/postgres
+export PATH=$PATH:/usr/local/opt/postgresql@9.6/bin
+
+
+
+
+ 

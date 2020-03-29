@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             name='Chat',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('username', models.CharField(max_length=25, verbose_name='名前')),
+                ('username', models.CharField(max_length=50, verbose_name='名前')),
                 ('text', models.CharField(max_length=255, verbose_name='本文')),
                 ('created_at', models.DateTimeField(default=django.utils.timezone.now)),
                 ('published_at', models.DateTimeField(blank=True, null=True)),
@@ -32,12 +32,12 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='user',
             name='password',
-            field=models.CharField(default=django.utils.timezone.now, max_length=25),
+            field=models.CharField(default=django.utils.timezone.now, max_length=50),
             preserve_default=False,
         ),
         migrations.AlterField(
             model_name='user',
             name='username',
-            field=models.CharField(max_length=25),
+            field=models.CharField(max_length=50),
         ),
     ]
