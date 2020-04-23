@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import django_heroku
-import dj_database_url
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -28,8 +26,7 @@ SECRET_KEY = '5vlqz*(w(6f3t_m&-+427&m-zn!o=al(q%#$*&glszxjo*n-x_'
 DEBUG = True
 
 
-ALLOWED_HOST=['127.0.0.1']
-
+ALLOWED_HOSTS=['13.115.13.61','ec2-13-115-13-61.ap-northeast-1.compute.amazonaws.com']
 
 # Application definition
 
@@ -41,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'slack',
+    'mod_wsgi.server',
 ]
 
 MIDDLEWARE = [
@@ -81,9 +79,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Djangoslackmyapp',
-        'USER': 'audio',
-        'PASSWORD': 'fuwari1993',
+        'NAME': 'djangoslackmyapp',
+        'USER': 'hoge',
+        'PASSWORD': 'buro1993',
         'HOST': '',
         'PORT': '5432',
     }
@@ -127,12 +125,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+# STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static')]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGIN_REDIRECT_URL = '/'
-
-django_heroku.settings(locals())
-
 
