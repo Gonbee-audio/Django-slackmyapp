@@ -26,7 +26,7 @@ SECRET_KEY = '5vlqz*(w(6f3t_m&-+427&m-zn!o=al(q%#$*&glszxjo*n-x_'
 DEBUG = True
 
 
-ALLOWED_HOSTS=['13.115.13.61','ec2-13-115-13-61.ap-northeast-1.compute.amazonaws.com']
+ALLOWED_HOSTS=['13.115.13.61','ec2-13-115-13-61.ap-northeast-1.compute.amazonaws.com','127.0.0.1']
 
 # Application definition
 
@@ -37,13 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'slack',
-    'mod_wsgi.server',
+
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangoslackmyapp',
-        'USER': 'hoge',
-        'PASSWORD': 'buro1993',
+        'NAME': 'Djangoslackmyapp',
+        'USER': 'audio',
+        'PASSWORD': 'password',
         'HOST': '',
         'PORT': '5432',
     }

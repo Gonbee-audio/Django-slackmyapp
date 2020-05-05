@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from api.urls import router 
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include((router.urls, 'routername'))),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('', include('slack.urls')),
+    path('', include('slack.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

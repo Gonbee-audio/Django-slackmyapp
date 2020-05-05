@@ -53,4 +53,4 @@ def SendChatModel(request):
         return render(request, 'chatpage/chat.html', {})
     return render(request, 'chatpage/chat.html', {})
 
-    
+
